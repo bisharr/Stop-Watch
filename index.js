@@ -3,6 +3,7 @@ const timerEl = document.getElementById('timer');
 const startButtonEl = document.getElementById('start');
 const stoptButtonEl = document.getElementById('stop');
 const resetButtonEl = document.getElementById('reset');
+const iconEl = document.querySelector('.icon');
 
 let startTime = 0;
 let elapsedTime = 0;
@@ -58,3 +59,13 @@ startButtonEl.addEventListener('click', startTimer);
 stoptButtonEl.addEventListener('click', stoptimer);
 
 resetButtonEl.addEventListener('click', resetTimer);
+
+iconEl.addEventListener('click', function () {
+  document.body.classList.toggle('dark-theme');
+
+  if (document.body.classList.contains('dark-theme')) {
+    iconEl.src = 'sun.png';
+  } else {
+    iconEl.src = 'moon.png';
+  }
+});
